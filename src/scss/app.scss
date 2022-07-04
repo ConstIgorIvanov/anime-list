@@ -1,0 +1,16 @@
+@import './variables';
+@import './components/app';
+
+body {
+  margin: 0;
+  background-color: $background;
+  font-family: Bangers, Roboto;
+  letter-spacing: 2px;
+  font-size: $font-standart;
+}
+
+.wrapper {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}

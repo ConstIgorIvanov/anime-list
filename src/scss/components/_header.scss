@@ -1,0 +1,22 @@
+.header {
+  height: 70px;
+  font-size: $font-super;
+  background-color: $gray-background;
+  display: flex;
+  align-items: center;
+  &--wrapper {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo {
+    & span {
+      color: $red;
+    }
+  }
+
+  &__right {
+    display: flex;
+  }
+}
