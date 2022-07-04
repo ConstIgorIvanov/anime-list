@@ -1,0 +1,41 @@
+.login {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: $white;
+
+  &__left {
+    margin-right: 30px;
+    &__title {
+      font-size: $font-super;
+      margin-bottom: 40px;
+    }
+    &__description {
+      font-size: $font-min;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+    &__image {
+      width: 500px;
+      height: 400px;
+      border: 1px solid $white;
+    }
+  }
+  @media (max-width: 1125px) {
+    &__left {
+      margin-bottom: 50px;
+    }
+    &__right {
+      justify-content: center;
+    }
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media (max-width: 600px) {
+    &__right {
+      display: none;
+    }
+  }
+}
