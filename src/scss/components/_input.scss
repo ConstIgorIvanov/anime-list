@@ -3,4 +3,26 @@
   border: none;
   border-radius: 20px;
   outline: none;
+  padding: 10px 25px;
+  color: $white;
+
+  &--wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--header {
+    margin-right: 15px;
+    transition: $duration;
+    &:focus {
+      box-shadow: 0px 0px 8px 2px $red;
+    }
+  }
+}
+
+.search {
+  position: absolute;
+  left: 5px;
 }

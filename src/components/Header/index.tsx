@@ -1,4 +1,7 @@
 import React from 'react';
+
+import searchSVG from '../../assets/search.svg';
+
 const Header = () => {
   return (
     <div className="header">
@@ -8,8 +11,11 @@ const Header = () => {
           <span>AnimeList</span>
         </div>
         <div className="header__right">
-          <input className="input" placeholder="Search" />
-          <div className="header__right__ico">ico</div>
+          <div className="input--wrapper">
+            <input type="text" className="input input--header" placeholder="Search" />
+            <img className="search" width={'18px'} src={searchSVG} />
+          </div>
+          <div className="header__right__ico"></div>
         </div>
       </div>
     </div>
