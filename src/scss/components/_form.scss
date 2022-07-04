@@ -1,0 +1,58 @@
+.form {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(30%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: $slowly-duration;
+
+  &__container {
+    background-color: $gray-background;
+    padding: 40px;
+    border-radius: 14px;
+
+    transform: scale(0);
+    transition: $slowly-duration;
+
+    &--visible {
+      transform: scale(1);
+    }
+    &__title {
+      font-size: $font-super;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__item {
+      cursor: pointer;
+      display: flex;
+      width: 350px;
+      height: 40px;
+      margin-bottom: 30px;
+      border: 2px solid $black;
+      border-radius: 14px;
+      padding: 10px 25px;
+    }
+
+    &__image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+
+      & img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    & span {
+      margin-left: 15px;
+      font-size: $font-standart;
+    }
+  }
+}

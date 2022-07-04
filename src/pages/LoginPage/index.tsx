@@ -1,6 +1,10 @@
 import React from 'react';
 
+import SignInForm from './SignInForm';
+
 const LoginPage = () => {
+  const [visible, setVisible] = React.useState(false);
+
   return (
     <div className="login">
       <div className="login__left">
@@ -9,11 +13,14 @@ const LoginPage = () => {
           Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adip
           Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adip
         </div>
-        <button className="button">Create a list</button>
+        <button onClick={() => setVisible(true)} className="button">
+          Create a list
+        </button>
       </div>
       <div className="login__right">
         <div className="login__right__image"></div>
       </div>
+      <SignInForm visible={visible} setVisible={setVisible} />
     </div>
   );
 };
