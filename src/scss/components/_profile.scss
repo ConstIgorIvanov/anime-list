@@ -12,6 +12,7 @@
     flex-direction: column;
     background-color: $gray-background;
     border-radius: 20px;
+    height: 600px;
     &__container {
     }
   }
@@ -28,10 +29,11 @@
       height: 80px;
     }
     &__name {
-      font-size: $font-standart;
+      font-size: $font-min;
     }
     &__email {
       font-size: $font-extra-min;
+      color: $gray;
     }
   }
   &__controller {
@@ -39,9 +41,12 @@
     &__item {
       font-size: $font-standart;
       font-weight: 700;
-      padding: 15px 0px;
+      padding: 5px 0px;
       padding-left: 15px;
+      margin-bottom: 5px;
+
       cursor: pointer;
+      user-select: none;
       &:hover {
         width: 150%;
         background-color: $background;
@@ -57,11 +62,22 @@
   }
   &__logout {
     font-size: $font-extra-min;
+
     cursor: pointer;
+    user-select: none;
   }
 
   &__main {
     border-radius: 20px;
     background-color: $gray-background;
+    &__top {
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__list {
+      padding: 10px 40px;
+      margin-bottom: 40px;
+    }
   }
 }

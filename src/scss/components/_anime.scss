@@ -1,0 +1,33 @@
+.anime {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $gray;
+  &__image {
+    border-radius: 20px;
+  }
+  &__info {
+    &__title {
+      font-size: $font-standart;
+      & > span {
+        color: $gray;
+      }
+      margin-bottom: 20px;
+    }
+    &__year {
+      font-size: $font-min;
+      color: $gray;
+      margin-bottom: 10px;
+    }
+    &__genre {
+      font-size: $font-min;
+      color: $gray;
+      margin-bottom: 10px;
+    }
+    &__synopsis {
+      font-size: $font-min;
+      color: $gray;
+    }
+  }
+}
