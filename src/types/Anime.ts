@@ -3,6 +3,12 @@ export type Genre = {
   name: string;
 };
 
+enum Season {
+  spring = 'spring',
+  summer = 'summer',
+  fall = 'fall',
+  winter = 'winter',
+}
 export interface Anime {
   mal_id: number;
   images: {
@@ -16,6 +22,7 @@ export interface Anime {
   title_english: string;
   title_japanese: string;
   type: string;
+  season: Season;
   episodes: number;
   status: string;
   rating: string;

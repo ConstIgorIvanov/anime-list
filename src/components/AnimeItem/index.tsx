@@ -13,7 +13,7 @@ const AnimeItem: React.FC<Anime> = ({
   rating,
   score,
   synopsis,
-  background,
+  season,
   year,
   genres,
 }) => {
@@ -25,6 +25,7 @@ const AnimeItem: React.FC<Anime> = ({
           {title_english} <span>{title_japanese}</span>
         </div>
         <div className="anime__info__year">{year}</div>
+        <div className="anime__info__season">{season}</div>
         <div className="anime__info__genre">{genres.map((genre) => genre.name).join(', ')}</div>
         <div className="anime__info__synopsis">{synopsis}</div>
       </div>

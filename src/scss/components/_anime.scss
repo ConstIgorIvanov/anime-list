@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 4fr;
   gap: 20px;
   padding-bottom: 30px;
+  margin-bottom: 30px;
   border-bottom: 1px solid $gray;
   &__image {
     border-radius: 20px;
@@ -16,6 +17,11 @@
       margin-bottom: 20px;
     }
     &__year {
+      font-size: $font-min;
+      color: $gray;
+      margin-bottom: 10px;
+    }
+    &__season {
       font-size: $font-min;
       color: $gray;
       margin-bottom: 10px;
