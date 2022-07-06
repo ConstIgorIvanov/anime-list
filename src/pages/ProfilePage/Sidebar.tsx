@@ -1,13 +1,23 @@
 import React from 'react';
 import { logout } from '../../service/firebase';
-const Sidebar = () => {
+
+interface SidebarProps {
+  email: string | null;
+  photoURL: string | null;
+  displayName: string | null;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ email, photoURL, displayName }) => {
+  console.log(photoURL);
   return (
     <div className="profile__sidebar">
       <div className="profile__sidebar__container">
         <div className="profile__info">
-          <div className="profile__info__img"></div>
-          <div className="profile__info__name">name</div>
-          <div className="profile__info__email">email@gmail.com</div>
+          <div className="profile__info__img">
+            <img src={photoURL || 'src'} />
+          </div>
+          <div className="profile__info__name">{displayName}</div>
+          <div className="profile__info__email">{email}</div>
         </div>
         <div className="profile__controller">
           <div className="profile__controller__item">List</div>

@@ -2,11 +2,16 @@ import React from 'react';
 
 import Sidebar from './Sidebar';
 import Main from './Main';
+import { User } from '@firebase/auth';
 
-const ProfilePage = () => {
+interface ProfilePageProps {
+  user: User;
+}
+
+const ProfilePage: React.FC<ProfilePageProps> = ({ user }) => {
   return (
     <div className="profile">
-      <Sidebar />
+      <Sidebar {...user} />
       <Main />
     </div>
   );
