@@ -1,7 +1,6 @@
 .input {
   background-color: $white-background;
   border: none;
-  border-radius: 20px;
   outline: none;
   padding: 10px 25px;
   color: $white;
@@ -14,12 +13,18 @@
   }
 
   &--header {
+    border-radius: 20px;
     margin-right: 55px;
     width: 220px;
     transition: $duration;
     &:focus {
       box-shadow: 0px 0px 8px 2px $red;
     }
+  }
+
+  &--main__top {
+    width: 200px;
+    border-radius: 8px;
   }
 }
 

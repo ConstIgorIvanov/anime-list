@@ -18,35 +18,32 @@ const Main = () => {
           <div>Search</div>
           <div className="input--wrapper">
             <input type="text" className="input input--main__top" placeholder="Search" />
-            <img className="search" width={'18px'} src={searchSVG} />
+            <img className="search" width={'18px'} alt="search" src={searchSVG} />
           </div>
         </div>
         <div>
-          <div>Season</div>
-
+          <div>Status</div>
           <div className="select">
             <input type="checkbox" id="season"></input>
             <div className="select__container">
               <label htmlFor="season"></label>
               <div className="select__wrapper">
-                <p className="select__text">Spring</p>
+                <p className="select__text">{'SELECTED VALUE'}</p>
+                <label className="select__button" htmlFor="season"></label>
               </div>
+
               <div className="select__options">
                 <div className="select__option">
                   <label htmlFor="season" onClick={() => console.log('click')}></label>
-                  <div className="select__title">spring</div>
+                  <div className="select__title">airing</div>
                 </div>
                 <div className="select__option">
                   <label htmlFor="season" onClick={() => console.log('click')}></label>
-                  <div className="select__title">winter</div>
+                  <div className="select__title">complete</div>
                 </div>
                 <div className="select__option">
                   <label htmlFor="season" onClick={() => console.log('click')}></label>
-                  <div className="select__title">fall</div>
-                </div>
-                <div className="select__option">
-                  <label htmlFor="season" onClick={() => console.log('click')}></label>
-                  <div className="select__title">summer</div>
+                  <div className="select__title">upcoming</div>
                 </div>
               </div>
             </div>
@@ -55,35 +52,34 @@ const Main = () => {
         </div>
         <div>
           <div>Sort By</div>
-          <div className="input--wrapper">
-            <div className="select">
-              <input type="checkbox" id="sort"></input>
-              <div className="select__container">
-                <label htmlFor="sort"></label>
-                <div className="select__wrapper">
-                  <p className="select__text">Spring</p>
+          <div className="select">
+            <input type="checkbox" id="sort"></input>
+            <div className="select__container">
+              <label htmlFor="sort"></label>
+              <div className="select__wrapper">
+                <p className="select__text">{'SELECTED VALUE'}</p>
+                <label className="select__button" htmlFor="sort"></label>
+              </div>
+              <div className="select__options">
+                <div className="select__option">
+                  <label htmlFor="sort" onClick={() => console.log('click')}></label>
+                  <div className="select__title">Score [a-z]</div>
                 </div>
-                <div className="select__options">
-                  <div className="select__option">
-                    <label htmlFor="sort" onClick={() => console.log('click')}></label>
-                    <div className="select__title">spring</div>
-                  </div>
-                  <div className="select__option">
-                    <label htmlFor="sort" onClick={() => console.log('click')}></label>
-                    <div className="select__title">winter</div>
-                  </div>
-                  <div className="select__option">
-                    <label htmlFor="sort" onClick={() => console.log('click')}></label>
-                    <div className="select__title">fall</div>
-                  </div>
-                  <div className="select__option">
-                    <label htmlFor="sort" onClick={() => console.log('click')}></label>
-                    <div className="select__title">summer</div>
-                  </div>
+                <div className="select__option">
+                  <label htmlFor="sort" onClick={() => console.log('click')}></label>
+                  <div className="select__title">Score [z-a]</div>
+                </div>
+                <div className="select__option">
+                  <label htmlFor="sort" onClick={() => console.log('click')}></label>
+                  <div className="select__title">Year [a-z]</div>
+                </div>
+                <div className="select__option">
+                  <label htmlFor="sort" onClick={() => console.log('click')}></label>
+                  <div className="select__title">Year [z-a]</div>
                 </div>
               </div>
-              <label htmlFor="sort" className="select__active-modal"></label>
             </div>
+            <label htmlFor="sort" className="select__active-modal"></label>
           </div>
         </div>
       </div>

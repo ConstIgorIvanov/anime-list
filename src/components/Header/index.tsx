@@ -7,7 +7,6 @@ const Header = () => {
     <div className="header">
       <div className="header--wrapper">
         <div className="header__logo">
-          {/* <img width="24px" alt="logo" src={logoSvg} /> */}
           <span>AnimeList</span>
         </div>
         <div className="header__right">

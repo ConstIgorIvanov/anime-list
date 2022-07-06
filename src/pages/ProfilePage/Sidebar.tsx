@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { logout } from '../../service/firebase';
 const Sidebar = () => {
   return (
     <div className="profile__sidebar">
@@ -10,6 +10,7 @@ const Sidebar = () => {
           <div className="profile__info__email">email@gmail.com</div>
         </div>
         <div className="profile__controller">
+          <div className="profile__controller__item">List</div>
           <div className="profile__controller__item">Current</div>
           <div className="profile__controller__item">Planing</div>
           <div className="profile__controller__item">Completed</div>
@@ -17,7 +18,9 @@ const Sidebar = () => {
           <div className="profile__controller__item">Dropped</div>
         </div>
       </div>
-      <div className="profile__logout">Log out</div>
+      <div className="profile__logout" onClick={logout}>
+        Log out
+      </div>
     </div>
   );
 };

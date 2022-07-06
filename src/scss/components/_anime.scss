@@ -5,6 +5,9 @@
   padding-bottom: 30px;
   margin-bottom: 30px;
   border-bottom: 1px solid $gray;
+  & span {
+    color: $white;
+  }
   &__image {
     border-radius: 20px;
   }

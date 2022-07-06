@@ -1,5 +1,6 @@
 import React from 'react';
 import { clsx } from 'clsx';
+import { signInWithGoogle } from '../../service/firebase';
 
 interface SignInProps {
   visible: boolean;
@@ -17,22 +18,20 @@ const SignInForm: React.FC<SignInProps> = ({ visible, setVisible }) => {
           </div>
         </div>
 
-        <div className="form__container__item">
+        <div className="form__container__item" onClick={signInWithGoogle}>
           <div className="form__container__image">
             <img
               alt="google"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png"
             />
           </div>
-
           <span>Sign in with Google</span>
         </div>
         <div className="form__container__item">
           <div className="form__container__image">
             <img alt="gh" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
           </div>
-
-          <span>Sign in with GitHub</span>
+          <span>Fake login</span>
         </div>
       </div>
     </div>
