@@ -8,13 +8,12 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ email, photoURL, displayName }) => {
-  console.log(photoURL);
   return (
     <div className="profile__sidebar">
       <div className="profile__sidebar__container">
         <div className="profile__info">
           <div className="profile__info__img">
-            <img src={photoURL || 'src'} />
+            <img alt="photo" src={photoURL || 'src'} />
           </div>
           <div className="profile__info__name">{displayName}</div>
           <div className="profile__info__email">{email}</div>

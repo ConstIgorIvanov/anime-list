@@ -3,14 +3,17 @@ import AnimeItem from '../../components/AnimeItem';
 import { Anime } from '../../types/Anime';
 
 import searchSVG from '../../assets/search.svg';
+import loader from '../../assets/loader.svg';
 
 const Main = () => {
   const [anime, setAnime] = React.useState<Anime[] | null>(null);
+
   React.useEffect(() => {
     fetch('https://api.jikan.moe/v4/anime')
       .then((data) => data.json())
       .then((res) => setAnime(res.data));
   }, []);
+
   return (
     <div className="profile__main">
       <div className="profile__main__top">
@@ -19,6 +22,43 @@ const Main = () => {
           <div className="input--wrapper">
             <input type="text" className="input input--main__top" placeholder="Search" />
             <img className="search" width={'18px'} alt="search" src={searchSVG} />
+          </div>
+        </div>
+        <div>
+          <div>Rating</div>
+          <div className="select">
+            <input type="checkbox" id="rating"></input>
+            <div className="select__container">
+              <label htmlFor="rating"></label>
+              <div className="select__wrapper">
+                <p className="select__text">{'SELECTED VALUE'}</p>
+                <label className="select__button" htmlFor="rating"></label>
+              </div>
+
+              <div className="select__options">
+                <div className="select__option">
+                  <label htmlFor="rating" onClick={() => console.log('click')}></label>
+                  <div className="select__title">g</div>
+                </div>
+                <div className="select__option">
+                  <label htmlFor="rating" onClick={() => console.log('click')}></label>
+                  <div className="select__title">pg</div>
+                </div>
+                <div className="select__option">
+                  <label htmlFor="rating" onClick={() => console.log('click')}></label>
+                  <div className="select__title">pg13</div>
+                </div>
+                <div className="select__option">
+                  <label htmlFor="rating" onClick={() => console.log('click')}></label>
+                  <div className="select__title">r17</div>
+                </div>
+                <div className="select__option">
+                  <label htmlFor="rating" onClick={() => console.log('click')}></label>
+                  <div className="select__title">r</div>
+                </div>
+              </div>
+            </div>
+            <label htmlFor="rating" className="select__active-modal"></label>
           </div>
         </div>
         <div>
@@ -31,7 +71,6 @@ const Main = () => {
                 <p className="select__text">{'SELECTED VALUE'}</p>
                 <label className="select__button" htmlFor="season"></label>
               </div>
-
               <div className="select__options">
                 <div className="select__option">
                   <label htmlFor="season" onClick={() => console.log('click')}></label>
@@ -87,7 +126,7 @@ const Main = () => {
         {anime ? (
           anime.map((item) => <AnimeItem key={item.mal_id} {...item} />)
         ) : (
-          <div>Loading</div>
+          <img className="loader--list" src={loader} />
         )}
       </div>
     </div>

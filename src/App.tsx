@@ -5,7 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import Header from './components/Header';
 import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
-import { auth, db } from './service/firebase';
+import { auth } from './service/firebase';
 
 import loader from './assets/loader.svg';
 
@@ -19,7 +19,7 @@ function App() {
     if (user) console.log(user);
   }, [user, loading]);
 
-  if (loading) return <img className="loader--all" src={loader} />;
+  if (loading) return <img alt="loader" className="loader--all" src={loader} />;
   return (
     <div>
       <Header />

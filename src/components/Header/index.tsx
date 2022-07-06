@@ -10,10 +10,10 @@ const Header = () => {
           <span>AnimeList</span>
         </div>
         <div className="header__right">
-          <div className="input--wrapper">
+          {/* <div className="input--wrapper">
             <input type="text" className="input input--header" placeholder="Search" />
             <img className="search" width={'18px'} src={searchSVG} />
-          </div>
+          </div> */}
           <div className="header__right__ico"></div>
         </div>
       </div>

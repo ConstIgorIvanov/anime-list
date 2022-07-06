@@ -23,6 +23,6 @@ export enum Rating {
 }
 
 export enum Sort {
-  az = 'asc',
-  za = 'desc',
+  za = 'asc',
+  az = 'desc',
 }

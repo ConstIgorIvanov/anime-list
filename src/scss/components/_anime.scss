@@ -5,6 +5,7 @@
   padding-bottom: 30px;
   margin-bottom: 30px;
   border-bottom: 1px solid $gray;
+  position: relative;
   & span {
     color: $white;
   }
@@ -37,6 +38,36 @@
     &__synopsis {
       font-size: $font-min;
       color: $gray;
+    }
+  }
+
+  &--mask {
+    background-color: $white-background;
+
+    font-size: $font-extra-min;
+    color: $white;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    &__item {
+      cursor: pointer;
+      padding: 5px 10px;
+
+      border-radius: 8px;
+      &:hover {
+        color: $red;
+      }
+    }
+    &__item:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+  &:hover {
+    .anime--mask {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
