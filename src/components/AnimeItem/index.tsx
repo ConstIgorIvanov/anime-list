@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anime } from '../../types/Anime';
+import { Anime } from '../../redux/anime/types';
 import { addItem } from '../../service/firebase';
 interface AnimeItemProps extends Anime {
   uid: string;

@@ -14,10 +14,6 @@ import './scss/app.scss';
 function App() {
   const [user, loading] = useAuthState(auth);
 
-  React.useEffect(() => {
-    if (loading) return;
-  }, [user, loading]);
-
   if (loading) return <img alt="loader" className="loader--all" src={loader} />;
   return (
     <div>

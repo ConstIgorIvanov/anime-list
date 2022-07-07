@@ -1,7 +1,7 @@
 import React from 'react';
 import AnimeItem from '../../components/AnimeItem';
 import Selectors from '../../components/Selectors';
-import { Anime } from '../../types/Anime';
+import { Anime } from '../../redux/anime/types';
 
 import loader from '../../assets/loader.svg';
 

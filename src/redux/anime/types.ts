@@ -3,7 +3,7 @@ export type Genre = {
   name: string;
 };
 
-export interface Anime {
+export type Anime = {
   mal_id: number;
   images: {
     jpg: {
@@ -24,4 +24,9 @@ export interface Anime {
   background: string;
   year: number;
   genres: Genre[];
+};
+
+export interface AnimeState {
+  items: Anime[];
+  status: boolean;
 }
