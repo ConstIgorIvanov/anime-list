@@ -1,6 +1,16 @@
 import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from 'firebase/auth';
-import { getFirestore, query, getDocs, collection, where, addDoc } from 'firebase/firestore';
+import {
+  getFirestore,
+  query,
+  getDocs,
+  getDoc,
+  collection,
+  where,
+  addDoc,
+  doc,
+  setDoc,
+} from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAa7-tJX08roEJawlZGqHgnyuq1JpNrjrA',
@@ -22,6 +32,7 @@ const signInWithGoogle = async () => {
     const user = res.user;
     const q = query(collection(db, 'users'), where('uid', '==', user.uid));
     const docs = await getDocs(q);
+
     if (docs.docs.length === 0) {
       await addDoc(collection(db, 'users'), {
         uid: user.uid,
@@ -36,8 +47,50 @@ const signInWithGoogle = async () => {
   }
 };
 
+const addItem = async (
+  uid,
+  base,
+  mal_id,
+  images,
+  title_english,
+  title_japanese,
+  status,
+  rating,
+  score,
+  synopsis,
+  year,
+  genres,
+) => {
+  try {
+    await setDoc(doc(db, 'anime', `${title_english}`), {
+      uid,
+      categories: base,
+      mal_id,
+      images,
+      title_english,
+      title_japanese,
+      status,
+      rating,
+      score,
+      synopsis,
+      year,
+      genres,
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getItemCategories = async (categories) => {
+  const q = query(collection(db, 'anime'), where('categories', '==', categories));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    console.log(doc.id, ' => ', doc.data());
+  });
+};
+
 const logout = () => {
   signOut(auth);
 };
 
-export { auth, db, signInWithGoogle, logout };
+export { auth, db, signInWithGoogle, logout, addItem, getItemCategories };

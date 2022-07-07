@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -12,11 +12,10 @@ import loader from './assets/loader.svg';
 import './scss/app.scss';
 
 function App() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   React.useEffect(() => {
     if (loading) return;
-    if (user) console.log(user);
   }, [user, loading]);
 
   if (loading) return <img alt="loader" className="loader--all" src={loader} />;

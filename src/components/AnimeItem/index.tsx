@@ -1,7 +1,12 @@
 import React from 'react';
 import { Anime } from '../../types/Anime';
+import { addItem } from '../../service/firebase';
+interface AnimeItemProps extends Anime {
+  uid: string;
+}
 
-const AnimeItem: React.FC<Anime> = ({
+const AnimeItem: React.FC<AnimeItemProps> = ({
+  uid,
   mal_id,
   images,
   title_english,
@@ -13,14 +18,40 @@ const AnimeItem: React.FC<Anime> = ({
   year,
   genres,
 }) => {
+  const Add = (base: string) => {
+    addItem(
+      uid,
+      base,
+      mal_id,
+      images,
+      title_english,
+      title_japanese,
+      status,
+      rating,
+      score,
+      synopsis,
+      year,
+      genres,
+    );
+  };
   return (
     <div className="anime">
       <div className="anime--mask">
-        <div className="anime--mask__item">Current</div>
-        <div className="anime--mask__item">Planing</div>
-        <div className="anime--mask__item">Completed</div>
-        <div className="anime--mask__item">Paused</div>
-        <div className="anime--mask__item">Dropped</div>
+        <div className="anime--mask__item" onClick={() => Add('current')}>
+          Current
+        </div>
+        <div className="anime--mask__item" onClick={() => Add('planing')}>
+          Planing
+        </div>
+        <div className="anime--mask__item" onClick={() => Add('completed')}>
+          Completed
+        </div>
+        <div className="anime--mask__item" onClick={() => Add('paused')}>
+          Paused
+        </div>
+        <div className="anime--mask__item" onClick={() => Add('dropped')}>
+          Dropped
+        </div>
       </div>
       <img alt="anime logo" src={images.jpg.image_url} className="anime__image"></img>
       <div className="anime__info">

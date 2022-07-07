@@ -12,7 +12,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user }) => {
   return (
     <div className="profile">
       <Sidebar {...user} />
-      <Main />
+      <Main uid={user.uid} />
     </div>
   );
 };

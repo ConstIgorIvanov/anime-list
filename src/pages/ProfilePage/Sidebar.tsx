@@ -13,7 +13,7 @@ const Sidebar: React.FC<SidebarProps> = ({ email, photoURL, displayName }) => {
       <div className="profile__sidebar__container">
         <div className="profile__info">
           <div className="profile__info__img">
-            <img alt="photo" src={photoURL || 'src'} />
+            <img alt="profile" src={photoURL || 'src'} />
           </div>
           <div className="profile__info__name">{displayName}</div>
           <div className="profile__info__email">{email}</div>
