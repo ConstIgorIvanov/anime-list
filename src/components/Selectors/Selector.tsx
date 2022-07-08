@@ -1,14 +1,13 @@
-import { where } from 'firebase/firestore';
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setRating, setStatus, setSort } from '../../redux/sort/sort';
-interface Selector {
+interface SelectorProps {
   id: string;
   options: string[];
   query?: string[];
 }
 
-const Selector: React.FC<Selector> = ({ id, options, query }) => {
+const Selector: React.FC<SelectorProps> = ({ id, options, query }) => {
   const dispatch = useAppDispatch();
   const rating = useAppSelector((state) => state.sort.rating);
   const order = useAppSelector((state) => state.sort.sort.order);
