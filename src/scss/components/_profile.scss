@@ -6,6 +6,9 @@
   grid-template-columns: 1fr 4fr;
   gap: 20px;
 
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr;
+  }
   &__sidebar {
     padding: 25px 20px;
     display: flex;
@@ -13,6 +16,9 @@
     background-color: $gray-background;
     border-radius: 20px;
     height: 600px;
+    @media (max-width: 1400px) {
+      height: 300px;
+    }
   }
 
   &__info {
@@ -41,6 +47,9 @@
   }
   &__controller {
     margin-bottom: 100px;
+    @media (max-width: 1400px) {
+      margin-bottom: 30px;
+    }
     &__item {
       font-size: $font-standart;
       font-weight: 700;
@@ -54,6 +63,9 @@
         width: 150%;
         background-color: $background;
         border-radius: 100px 0px 0px 100px;
+        @media (max-width: 1400px) {
+          border-radius: 100px;
+        }
       }
 
       &--active {
@@ -62,10 +74,14 @@
         border-radius: 100px 0px 0px 100px;
       }
     }
+    @media (max-width: 1400px) {
+      display: flex;
+    }
   }
   &__logout {
     font-size: $font-extra-min;
-
+    width: 100px;
+    height: 50px;
     cursor: pointer;
     user-select: none;
   }
@@ -81,6 +97,12 @@
     }
     &__list {
       padding: 10px 40px;
+    }
+    @media (max-width: 1500px) {
+      width: 90%;
+    }
+    @media (max-width: 1400px) {
+      width: 100%;
     }
   }
 }
