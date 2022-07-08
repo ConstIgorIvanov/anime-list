@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { setRating, setStatus, setSort } from '../../redux/sort/sort';
+import { setRating, setStatus, setSort, setSearchValue } from '../../redux/sort/sort';
 interface SelectorProps {
   id: string;
   options: string[];
@@ -28,9 +28,11 @@ const Selector: React.FC<SelectorProps> = ({ id, options, query }) => {
     switch (id) {
       case 'rating':
         dispatch(setRating(item));
+        dispatch(setSearchValue(''));
         break;
       case 'status':
         dispatch(setStatus(item));
+        dispatch(setSearchValue(''));
         break;
       case 'sort':
         dispatch(
@@ -39,6 +41,7 @@ const Selector: React.FC<SelectorProps> = ({ id, options, query }) => {
             query: query![index] || 'desc',
           }),
         );
+        dispatch(setSearchValue(''));
     }
   };
   return (

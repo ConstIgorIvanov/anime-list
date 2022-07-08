@@ -7,15 +7,16 @@ import { setSearchValue } from '../../redux/sort/sort';
 
 const Selectors = () => {
   const [queryValue, setQueryValue] = React.useState('');
-  const [value, setValue] = React.useState('');
+
   const dispatch = useAppDispatch();
-  const searchValue = useAppSelector((state) => state.sort.searchValue);
+
   const category = useAppSelector((state) => state.category.category);
 
   const SearchValue = (e: string) => {
     if (e === 'Enter') {
       if (queryValue !== '') {
         dispatch(setSearchValue(queryValue));
+        setQueryValue('');
       }
     }
   };
@@ -26,7 +27,6 @@ const Selectors = () => {
       {' '}
       <div>
         <div>Search</div>
-
         <div className="input--wrapper">
           <input
             value={queryValue}
