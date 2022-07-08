@@ -3,16 +3,18 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import Main from './Main';
 import { User } from '@firebase/auth';
-
+import { useAppSelector } from '../../hooks/hooks';
 interface ProfilePageProps {
   user: User;
 }
 
 const ProfilePage: React.FC<ProfilePageProps> = ({ user }) => {
+  const anime = useAppSelector((state) => state.anime.items);
+
   return (
     <div className="profile">
       <Sidebar {...user} />
-      <Main uid={user.uid} />
+      <Main uid={user.uid} items={anime} />
     </div>
   );
 };

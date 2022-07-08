@@ -62,7 +62,7 @@ const addItem = async (
   genres,
 ) => {
   try {
-    await setDoc(doc(db, 'anime', `${title_english}`), {
+    await setDoc(doc(db, `${uid}`, `${title_english}`), {
       uid,
       categories: base,
       mal_id,

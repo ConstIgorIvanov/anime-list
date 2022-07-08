@@ -12,7 +12,7 @@ export const getAnime = createAsyncThunk(
   'anime/getAnime',
   async (_, { rejectWithValue, dispatch }) => {
     const res = await axios.get('https://api.jikan.moe/v4/anime');
-    dispatch(setAnime(res.data));
+    dispatch(setAnime(res.data.data));
   },
 );
 
