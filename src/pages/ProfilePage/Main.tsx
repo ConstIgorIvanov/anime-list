@@ -19,7 +19,11 @@ const Main: React.FC<MainProps> = ({ uid, items }) => {
       <Selectors />
       <div className="profile__main__list">
         {status ? (
-          items.map((item) => <AnimeItem key={item.mal_id} {...item} uid={uid} />)
+          items.length === 0 ? (
+            <div>Добавьте что-нибудь в список</div>
+          ) : (
+            items.map((item) => <AnimeItem key={item.mal_id} {...item} uid={uid} />)
+          )
         ) : (
           <img alt="loader" className="loader--list" src={loader} />
         )}

@@ -81,12 +81,16 @@ const addItem = async (
   }
 };
 
-const getItemCategories = async (categories) => {
-  const q = query(collection(db, 'anime'), where('categories', '==', categories));
+const getItemCategories = async (uid, categories) => {
+  const anime = [];
+  const q = query(collection(db, `${uid}`), where('categories', '==', categories));
   const querySnapshot = await getDocs(q);
+
   querySnapshot.forEach((doc) => {
-    console.log(doc.id, ' => ', doc.data());
+    anime.push(doc.data());
   });
+
+  return anime;
 };
 
 const logout = () => {
