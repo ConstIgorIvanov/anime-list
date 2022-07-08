@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAppDispatch } from '../../hooks/hooks';
-import { getItemCategories, logout } from '../../service/firebase';
-import { getAnime, setAnime } from '../../redux/anime/slice';
+import { logout } from '../../service/firebase';
+import { getAnime, getAnimeFB } from '../../redux/anime/slice';
 interface SidebarProps {
   uid: string | null;
   email: string | null;
@@ -12,10 +12,8 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ uid, email, photoURL, displayName }) => {
   const dispatch = useAppDispatch();
 
-  const selectAnime = async (category: string) => {
-    const items = await getItemCategories(uid, category);
-    dispatch(setAnime(items));
-    console.log(1);
+  const selectAnime = (category: string) => {
+    dispatch(getAnimeFB({ uid, category }));
   };
 
   return (

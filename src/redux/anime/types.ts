@@ -30,3 +30,8 @@ export interface AnimeState {
   items: Anime[];
   status: boolean;
 }
+
+export type firebaseParams = {
+  uid: string | null;
+  category: string | null;
+};
