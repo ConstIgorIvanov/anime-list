@@ -4,7 +4,10 @@ import Selectors from '../../components/Selectors';
 import { Anime } from '../../redux/anime/types';
 
 import loader from '../../assets/loader.svg';
-import { useAppSelector } from '../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import Pagination from '../../components/Pagination';
+import { setCurrentPage } from '../../redux/sort/sort';
+import { getAnime } from '../../redux/anime/slice';
 
 interface MainProps {
   uid: string;
@@ -12,7 +15,14 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ uid, items }) => {
+  const dispatch = useAppDispatch();
   const status = useAppSelector((state) => state.anime.status);
+  const category = useAppSelector((state) => state.category.category);
+  const currentPage = useAppSelector((state) => state.sort.currentPage);
+
+  const CurrentPage = (page: number) => {
+    dispatch(setCurrentPage(page));
+  };
 
   return (
     <div className="profile__main">
@@ -28,6 +38,11 @@ const Main: React.FC<MainProps> = ({ uid, items }) => {
           <img alt="loader" className="loader--list" src={loader} />
         )}
       </div>
+      {category === 'list' ? (
+        <Pagination currentPage={currentPage} setCurrentPage={CurrentPage} />
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };

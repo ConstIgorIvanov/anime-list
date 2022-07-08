@@ -13,8 +13,8 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, setCurrentPage }) 
       breakLabel="..."
       nextLabel=">"
       onPageChange={(e) => setCurrentPage(e.selected + 1)}
-      pageRangeDisplayed={8}
-      pageCount={3}
+      pageRangeDisplayed={4}
+      pageCount={900}
       previousLabel="<"
       forcePage={currentPage - 1}
     />

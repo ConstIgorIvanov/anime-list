@@ -11,8 +11,10 @@ const initialState: AnimeState = {
 
 export const getAnime = createAsyncThunk(
   'anime/getAnime',
-  async (_, { rejectWithValue, dispatch }) => {
-    const res = await axios.get('https://api.jikan.moe/v4/anime');
+  async (data: any, { rejectWithValue, dispatch }) => {
+    const res = await axios.get(
+      `https://api.jikan.moe/v4/anime?page=${data.page}&limit=10&letter=${data.letter}`,
+    );
     dispatch(setAnime(res.data.data));
   },
 );

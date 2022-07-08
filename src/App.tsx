@@ -10,13 +10,19 @@ import { auth } from './service/firebase';
 import loader from './assets/loader.svg';
 
 import './scss/app.scss';
-import { useAppDispatch } from './hooks/hooks';
+import { useAppDispatch, useAppSelector } from './hooks/hooks';
 import { getAnime } from './redux/anime/slice';
 
 function App() {
   const [user, loading] = useAuthState(auth);
   const dispatch = useAppDispatch();
-  dispatch(getAnime());
+  const currentPage = useAppSelector((state) => state.sort.currentPage);
+  const searchValue = useAppSelector((state) => state.sort.searchValue);
+
+  React.useEffect(() => {
+    dispatch(getAnime({ page: currentPage, letter: searchValue }));
+  }, [currentPage, searchValue]);
+
   if (loading) return <img alt="loader" className="loader--all" src={loader} />;
   return (
     <div>

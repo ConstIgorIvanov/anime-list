@@ -1,6 +1,9 @@
 import React from 'react';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { getAnimeFB } from '../../redux/anime/slice';
 import { Anime } from '../../redux/anime/types';
 import { addItem } from '../../service/firebase';
+
 interface AnimeItemProps extends Anime {
   uid: string;
 }
@@ -18,6 +21,8 @@ const AnimeItem: React.FC<AnimeItemProps> = ({
   year,
   genres,
 }) => {
+  const category = useAppSelector((state) => state.category.category);
+  const dispatch = useAppDispatch();
   const Add = (base: string) => {
     addItem(
       uid,
@@ -33,6 +38,12 @@ const AnimeItem: React.FC<AnimeItemProps> = ({
       year,
       genres,
     );
+    if (category === 'list') {
+      alert(`${title_english || title_japanese} добавлен в ${base}`);
+    }
+    if (category !== 'list') {
+      dispatch(getAnimeFB({ uid, category }));
+    }
   };
   return (
     <div className="anime">

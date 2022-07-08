@@ -1,7 +1,9 @@
 import React from 'react';
-import { useAppDispatch } from '../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { logout } from '../../service/firebase';
 import { getAnime, getAnimeFB } from '../../redux/anime/slice';
+import { setCategory } from '../../redux/category/category';
+
 interface SidebarProps {
   uid: string | null;
   email: string | null;
@@ -11,9 +13,15 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ uid, email, photoURL, displayName }) => {
   const dispatch = useAppDispatch();
-
+  const currentPage = useAppSelector((state) => state.sort.currentPage);
   const selectAnime = (category: string) => {
+    dispatch(setCategory(category));
     dispatch(getAnimeFB({ uid, category }));
+  };
+
+  const listClick = () => {
+    dispatch(setCategory('list'));
+    dispatch(getAnime({ page: currentPage, letter: '' }));
   };
 
   return (
@@ -27,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ uid, email, photoURL, displayName }) 
           <div className="profile__info__email">{email}</div>
         </div>
         <div className="profile__controller">
-          <div className="profile__controller__item" onClick={() => dispatch(getAnime())}>
+          <div className="profile__controller__item" onClick={() => listClick()}>
             List
           </div>
           <div className="profile__controller__item" onClick={() => selectAnime('current')}>

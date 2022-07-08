@@ -35,3 +35,8 @@ export type firebaseParams = {
   uid: string | null;
   category: string | null;
 };
+
+export type AnimeAddSignature = Anime & {
+  uid: string | null;
+  base: string | null;
+};
