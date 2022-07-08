@@ -2,6 +2,7 @@ import React from 'react';
 
 interface Selector {
   id: string;
+
   options: string[];
 }
 

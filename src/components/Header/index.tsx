@@ -1,8 +1,10 @@
 import React from 'react';
 
-import searchSVG from '../../assets/search.svg';
+interface HeaderProps {
+  photo?: string | null;
+}
 
-const Header = () => {
+const Header: React.FC<HeaderProps> = ({ photo }) => {
   return (
     <div className="header">
       <div className="header--wrapper">
@@ -10,11 +12,7 @@ const Header = () => {
           <span>AnimeList</span>
         </div>
         <div className="header__right">
-          {/* <div className="input--wrapper">
-            <input type="text" className="input input--header" placeholder="Search" />
-            <img className="search" width={'18px'} src={searchSVG} />
-          </div> */}
-          <div className="header__right__ico"></div>
+          <div className="header__right__ico">{photo ? <img src={photo} /> : null}</div>
         </div>
       </div>
     </div>

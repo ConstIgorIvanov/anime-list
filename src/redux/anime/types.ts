@@ -29,6 +29,7 @@ export type Anime = {
 export interface AnimeState {
   items: Anime[];
   status: boolean;
+  pages: number;
 }
 
 export type firebaseParams = {

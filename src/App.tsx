@@ -19,14 +19,12 @@ function App() {
   const currentPage = useAppSelector((state) => state.sort.currentPage);
   const searchValue = useAppSelector((state) => state.sort.searchValue);
 
-  React.useEffect(() => {
-    dispatch(getAnime({ page: currentPage, letter: searchValue }));
-  }, [currentPage, searchValue]);
+  dispatch(getAnime({ page: currentPage, letter: searchValue }));
 
   if (loading) return <img alt="loader" className="loader--all" src={loader} />;
   return (
     <div>
-      <Header />
+      <Header photo={user?.photoURL} />
       <div className="wrapper">{user ? <ProfilePage user={user} /> : <LoginPage />}</div>
     </div>
   );

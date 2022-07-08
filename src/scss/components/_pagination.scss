@@ -1,7 +1,7 @@
 .pagination {
   display: flex;
   justify-content: center;
-
+  font-size: $font-extra-min;
   li {
     list-style-type: none;
     cursor: pointer;
