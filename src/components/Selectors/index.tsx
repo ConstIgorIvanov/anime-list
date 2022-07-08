@@ -44,7 +44,8 @@ const Selectors = () => {
         <div>Sort By</div>
         <Selector
           id="sort"
-          options={['rating [a-z]', 'rating [z-a]', 'year [a-z]', 'year [z-a]']}
+          query={['desc', 'asc', 'desc', 'asc']}
+          options={['score [a-z]', 'score [z-a]', 'start_date [a-z]', 'start_date [z-a]']}
         />
       </div>
     </div>

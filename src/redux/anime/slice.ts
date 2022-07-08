@@ -15,14 +15,14 @@ export const getAnime = createAsyncThunk(
   async (data: any, { rejectWithValue, dispatch }) => {
     if (data.letter.length > 0) {
       const res = await axios.get(
-        `https://api.jikan.moe/v4/anime?letter=${data.letter}&page=${data.page}`,
+        `https://api.jikan.moe/v4/anime?letter=${data.letter}&page=${data.page}&order_by=${data.order}&sort=${data.sort}`,
       );
       dispatch(setAnime(res.data.data));
       dispatch(setPages(res.data.pagination.last_visible_page));
     }
     if (data.letter.length === 0) {
       const res = await axios.get(
-        `https://api.jikan.moe/v4/anime?page=${data.page}&limit=10&rating${data.rating}`,
+        `https://api.jikan.moe/v4/anime?page=${data.page}&limit=10&rating=${data.rating}&status=${data.status}&order_by=${data.order}&sort=${data.sort}`,
       );
       dispatch(setAnime(res.data.data));
       dispatch(setPages(res.data.pagination.last_visible_page));

@@ -19,7 +19,21 @@ function App() {
   const currentPage = useAppSelector((state) => state.sort.currentPage);
   const searchValue = useAppSelector((state) => state.sort.searchValue);
 
-  dispatch(getAnime({ page: currentPage, letter: searchValue }));
+  const rating = useAppSelector((state) => state.sort.rating);
+  const status = useAppSelector((state) => state.sort.status);
+  const order = useAppSelector((state) => state.sort.sort.order);
+  const sort = useAppSelector((state) => state.sort.sort.query);
+
+  dispatch(
+    getAnime({
+      page: currentPage,
+      letter: searchValue,
+      rating,
+      status,
+      order,
+      sort,
+    }),
+  );
 
   if (loading) return <img alt="loader" className="loader--all" src={loader} />;
   return (
