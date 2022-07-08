@@ -7,7 +7,6 @@ import loader from '../../assets/loader.svg';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import Pagination from '../../components/Pagination';
 import { setCurrentPage } from '../../redux/sort/sort';
-import { getAnime } from '../../redux/anime/slice';
 
 interface MainProps {
   uid: string;

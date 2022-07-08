@@ -12,10 +12,13 @@ const initialState: AnimeState = {
 export const getAnime = createAsyncThunk(
   'anime/getAnime',
   async (data: any, { rejectWithValue, dispatch }) => {
-    const res = await axios.get(
-      `https://api.jikan.moe/v4/anime?page=${data.page}&limit=10&letter=${data.letter}`,
-    );
-    dispatch(setAnime(res.data.data));
+    if (data.letter.length > 0) {
+      const res = await axios.get(`https://api.jikan.moe/v4/anime?letter=${data.letter}`);
+      dispatch(setAnime(res.data.data));
+    } else {
+      const res = await axios.get(`https://api.jikan.moe/v4/anime?page=${data.page}&limit=10`);
+      dispatch(setAnime(res.data.data));
+    }
   },
 );
 export const getAnimeFB = createAsyncThunk(
