@@ -6,12 +6,18 @@ import { useAppSelector, useAppDispatch } from '../../hooks/hooks';
 import { setSearchValue } from '../../redux/sort/sort';
 
 const Selectors = () => {
+  const [queryValue, setQueryValue] = React.useState('');
+  const [value, setValue] = React.useState('');
   const dispatch = useAppDispatch();
   const searchValue = useAppSelector((state) => state.sort.searchValue);
   const category = useAppSelector((state) => state.category.category);
 
-  const SearchValue = (value: string) => {
-    dispatch(setSearchValue(value));
+  const SearchValue = (e: string) => {
+    if (e === 'Enter') {
+      if (queryValue !== '') {
+        dispatch(setSearchValue(queryValue));
+      }
+    }
   };
 
   if (category !== 'list') return <div></div>;
@@ -23,13 +29,15 @@ const Selectors = () => {
 
         <div className="input--wrapper">
           <input
-            value={searchValue}
-            onChange={(e) => SearchValue(e.target.value)}
+            value={queryValue}
+            onChange={(e) => setQueryValue(e.target.value)}
+            onKeyDown={(e) => SearchValue(e.code)}
             type="text"
             className="input input--main__top"
             placeholder="Search"
           />
           <img className="search" width={'18px'} alt="search" src={searchSVG} />
+          <div className="input__substring">Нажмите Enter для поиска</div>
         </div>
       </div>
       <div>

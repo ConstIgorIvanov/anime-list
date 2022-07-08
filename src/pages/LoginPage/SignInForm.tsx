@@ -27,12 +27,6 @@ const SignInForm: React.FC<SignInProps> = ({ visible, setVisible }) => {
           </div>
           <span>Sign in with Google</span>
         </div>
-        <div className="form__container__item">
-          <div className="form__container__image">
-            <img alt="gh" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
-          </div>
-          <span>Fake login</span>
-        </div>
       </div>
     </div>
   );

@@ -5,10 +5,18 @@
   padding: 10px 25px;
   color: $white;
 
+  &__substring {
+    opacity: 0;
+    visibility: hidden;
+    font-size: $font-extra-min;
+    color: $gray;
+  }
+
   &--wrapper {
     position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
   }
 
@@ -25,10 +33,16 @@
   &--main__top {
     width: 200px;
     border-radius: 8px;
+    &:focus ~ .input__substring {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 
 .search {
   position: absolute;
   left: 5px;
+  top: 50%;
+  transform: translateY(-100%);
 }

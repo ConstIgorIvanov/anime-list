@@ -22,7 +22,9 @@ const AnimeItem: React.FC<AnimeItemProps> = ({
   genres,
 }) => {
   const category = useAppSelector((state) => state.category.category);
+
   const dispatch = useAppDispatch();
+
   const Add = (base: string) => {
     addItem(
       uid,

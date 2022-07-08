@@ -15,6 +15,7 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ uid, items }) => {
   const dispatch = useAppDispatch();
+
   const status = useAppSelector((state) => state.anime.status);
   const pages = useAppSelector((state) => state.anime.pages);
   const category = useAppSelector((state) => state.category.category);
