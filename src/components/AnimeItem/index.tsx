@@ -6,6 +6,8 @@ import { addItem } from '../../service/firebase';
 
 interface AnimeItemProps extends Anime {
   uid: string;
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const AnimeItem: React.FC<AnimeItemProps> = ({
@@ -20,6 +22,8 @@ const AnimeItem: React.FC<AnimeItemProps> = ({
   synopsis,
   year,
   genres,
+  setVisible,
+  setValue,
 }) => {
   const category = useAppSelector((state) => state.category.category);
 
@@ -41,7 +45,11 @@ const AnimeItem: React.FC<AnimeItemProps> = ({
       genres,
     );
     if (category === 'list') {
-      alert(`${title_english || title_japanese} добавлен в ${base}`);
+      setVisible(true);
+      setValue(`${title_english || title_japanese} добавлен в ${base}`);
+      setTimeout(() => {
+        setVisible(false);
+      }, 2000);
     }
     if (category !== 'list') {
       dispatch(getAnimeFB({ uid, category }));

@@ -1,0 +1,16 @@
+.alert {
+  position: fixed;
+  z-index: 99;
+  right: 2%;
+  bottom: 10%;
+  border-radius: 8px;
+  background-color: $white-background;
+  border: 1px solid green;
+  padding: 15px 20px;
+  text-align: center;
+  transform: translateX(1000%);
+  transition: $medium-duration;
+  &--active {
+    transform: translateX(0px);
+  }
+}
