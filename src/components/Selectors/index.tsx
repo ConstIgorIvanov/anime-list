@@ -21,6 +21,12 @@ const Selectors = () => {
     }
   };
 
+  const clickSearch = () => {
+    if (queryValue !== '') {
+      dispatch(setSearchValue(queryValue));
+    }
+  };
+
   if (category !== 'list') return <div></div>;
   return (
     <div className="profile__main__top">
@@ -36,8 +42,14 @@ const Selectors = () => {
             className="input input--main__top"
             placeholder="Search"
           />
-          <img className="search" width={'18px'} alt="search" src={searchSVG} />
-          <div className="input__substring">Нажмите Enter для поиска</div>
+          <img
+            onClick={() => clickSearch()}
+            className="search"
+            width={'18px'}
+            alt="search"
+            src={searchSVG}
+          />
+          <div className="input__substring">Нажмите Enter или на значок поиска </div>
         </div>
       </div>
       <div>
