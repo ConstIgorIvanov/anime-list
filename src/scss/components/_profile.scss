@@ -47,6 +47,9 @@
   }
   &__controller {
     margin-bottom: 100px;
+    font-family: Bangers, Roboto;
+    letter-spacing: 4px;
+
     @media (max-width: 1400px) {
       margin-bottom: 30px;
     }
@@ -79,7 +82,7 @@
     }
   }
   &__logout {
-    font-size: $font-extra-min;
+    font-size: $font-min;
     width: 100px;
     height: 50px;
     cursor: pointer;
