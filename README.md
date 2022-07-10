@@ -14,6 +14,7 @@ Adaptive layout.
 - SCSS
 - Firebase
 
+
 - axios
 - react-paginate
 - clsx 
