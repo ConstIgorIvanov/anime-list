@@ -56,18 +56,21 @@
     &__item {
       font-size: $font-standart;
       font-weight: 700;
+      width: 150%;
       padding: 5px 0px;
       padding-left: 15px;
       margin-bottom: 5px;
-
+      transition: $slowly-duration;
       cursor: pointer;
       user-select: none;
       &:hover {
         width: 150%;
         background-color: $background;
         border-radius: 100px 0px 0px 100px;
+        border-left: 1px solid $red;
         @media (max-width: 1400px) {
           border-radius: 100px;
+          border: 1px solid $red;
         }
       }
 
@@ -75,6 +78,9 @@
         width: 150%;
         background-color: $background;
         border-radius: 100px 0px 0px 100px;
+        @media (max-width: 1400px) {
+          border-radius: 100px;
+        }
       }
     }
     @media (max-width: 1400px) {

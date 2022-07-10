@@ -12,7 +12,11 @@ const Header: React.FC<HeaderProps> = ({ photo }) => {
           <span>AnimeList</span>
         </div>
         <div className="header__right">
-          <div className="header__right__ico">{photo ? <img src={photo} /> : null}</div>
+          {photo ? (
+            <div className="header__right__ico">
+              <img src={photo} />{' '}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

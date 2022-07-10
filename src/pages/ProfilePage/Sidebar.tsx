@@ -3,6 +3,8 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { logout } from '../../service/firebase';
 import { getAnime, getAnimeFB } from '../../redux/anime/slice';
 import { setCategory } from '../../redux/category/category';
+import { setUser } from '../../redux/user/user';
+import clsx from 'clsx';
 
 interface SidebarProps {
   uid: string | null;
@@ -11,12 +13,20 @@ interface SidebarProps {
   displayName: string | null;
 }
 
+const categoryName = ['current', 'planing', 'completed', 'paused', 'dropped'];
+
 const Sidebar: React.FC<SidebarProps> = ({ uid, email, photoURL, displayName }) => {
   const dispatch = useAppDispatch();
   const currentPage = useAppSelector((state) => state.sort.currentPage);
+  const category = useAppSelector((state) => state.category.category);
   const selectAnime = (category: string) => {
     dispatch(setCategory(category));
     dispatch(getAnimeFB({ uid, category }));
+  };
+
+  const onLogoutClick = () => {
+    logout();
+    dispatch(setUser(null));
   };
 
   const listClick = () => {
@@ -35,27 +45,19 @@ const Sidebar: React.FC<SidebarProps> = ({ uid, email, photoURL, displayName }) 
           <div className="profile__info__email">{email}</div>
         </div>
         <div className="profile__controller">
-          <div className="profile__controller__item" onClick={() => listClick()}>
-            List
-          </div>
-          <div className="profile__controller__item" onClick={() => selectAnime('current')}>
-            Current
-          </div>
-          <div className="profile__controller__item" onClick={() => selectAnime('planing')}>
-            Planing
-          </div>
-          <div className="profile__controller__item" onClick={() => selectAnime('completed')}>
-            Completed
-          </div>
-          <div className="profile__controller__item" onClick={() => selectAnime('paused')}>
-            Paused
-          </div>
-          <div className="profile__controller__item" onClick={() => selectAnime('dropped')}>
-            Dropped
-          </div>
+          {categoryName.map((categoryN) => (
+            <div
+              className={clsx(
+                'profile__controller__item',
+                categoryN === category && 'profile__controller__item--active',
+              )}
+              onClick={() => selectAnime(categoryN)}>
+              {categoryN}
+            </div>
+          ))}
         </div>
       </div>
-      <div className="profile__logout" onClick={logout}>
+      <div className="profile__logout" onClick={() => onLogoutClick()}>
         Log out
       </div>
     </div>
