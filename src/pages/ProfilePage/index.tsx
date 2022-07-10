@@ -1,9 +1,11 @@
 import React from 'react';
+import { User } from '@firebase/auth';
+
+import { useAppSelector } from '../../hooks/hooks';
 
 import Sidebar from './Sidebar';
 import Main from './Main';
-import { User } from '@firebase/auth';
-import { useAppSelector } from '../../hooks/hooks';
+
 interface ProfilePageProps {
   user: User;
 }

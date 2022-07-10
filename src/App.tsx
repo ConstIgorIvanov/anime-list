@@ -1,7 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from './service/firebase';
 import Layout from './components/Layout';
 import MainPage from './pages/MainPage';
 import NotFoundPage from './pages/NotFoundPage';

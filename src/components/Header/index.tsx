@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ photo }) => {
         <div className="header__right">
           {photo ? (
             <div className="header__right__ico">
-              <img src={photo} />{' '}
+              <img src={photo} alt="logo" />{' '}
             </div>
           ) : null}
         </div>

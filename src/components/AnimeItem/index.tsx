@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getAnimeFB } from '../../redux/anime/slice';
 import { Anime } from '../../redux/anime/types';

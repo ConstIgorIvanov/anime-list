@@ -1,11 +1,13 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../service/firebase';
-import Header from './Header';
-import loader from '../assets/loader.svg';
 import { Outlet } from 'react-router-dom';
+
+import { auth } from '../service/firebase';
 import { useAppDispatch } from '../hooks/hooks';
 import { setUser } from '../redux/user/user';
+
+import Header from './Header';
+import loader from '../assets/loader.svg';
 
 const Layout = () => {
   const [user, loading] = useAuthState(auth);

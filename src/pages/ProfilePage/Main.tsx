@@ -1,13 +1,15 @@
 import React from 'react';
 import clsx from 'clsx';
+
+import { Anime } from '../../redux/anime/types';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { setCurrentPage } from '../../redux/sort/sort';
+
 import AnimeItem from '../../components/AnimeItem';
 import Selectors from '../../components/Selectors';
-import { Anime } from '../../redux/anime/types';
+import Pagination from '../../components/Pagination';
 
 import loader from '../../assets/loader.svg';
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import Pagination from '../../components/Pagination';
-import { setCurrentPage } from '../../redux/sort/sort';
 
 interface MainProps {
   uid: string;
