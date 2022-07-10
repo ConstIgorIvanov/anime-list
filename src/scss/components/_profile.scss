@@ -15,9 +15,15 @@
     flex-direction: column;
     background-color: $gray-background;
     border-radius: 20px;
-    height: 600px;
+    height: 700px;
     @media (max-width: 1400px) {
       height: 300px;
+    }
+    @media (max-width: 870px) {
+      width: 75%;
+    }
+    @media (max-width: 680px) {
+      width: 50%;
     }
   }
 
@@ -49,6 +55,10 @@
     margin-bottom: 100px;
     font-family: Bangers, Roboto;
     letter-spacing: 4px;
+    @media (max-width: 900px) {
+      max-width: 100%;
+      overflow: scroll;
+    }
 
     @media (max-width: 1400px) {
       margin-bottom: 30px;
@@ -103,15 +113,19 @@
       display: flex;
       justify-content: space-between;
       font-size: $font-min;
+      max-width: 100%;
+      @media (max-width: 685px) {
+        flex-direction: column;
+      }
     }
     &__list {
       padding: 10px 40px;
     }
-    @media (max-width: 1500px) {
-      width: 90%;
+    @media (max-width: 870px) {
+      width: 80%;
     }
-    @media (max-width: 1400px) {
-      width: 100%;
+    @media (max-width: 680px) {
+      width: 55%;
     }
   }
 }

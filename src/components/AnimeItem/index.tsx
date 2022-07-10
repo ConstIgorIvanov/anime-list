@@ -100,6 +100,7 @@ const AnimeItem: React.FC<AnimeItemProps> = ({
           <span>Genres:</span> {genres.map((genre) => genre.name).join(', ')}
         </div>
         <div className="anime__info__synopsis">{synopsis}</div>
+        {/* <div className="anime__info__more">Подробнее</div> */}
       </div>
     </div>
   );

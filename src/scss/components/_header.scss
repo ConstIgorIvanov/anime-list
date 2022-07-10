@@ -7,9 +7,7 @@
   align-items: center;
   margin-bottom: 20px;
   user-select: none;
-  @media (max-width: 900px) {
-    display: none;
-  }
+
   &--wrapper {
     width: 70%;
     margin: 0 auto;
@@ -17,6 +15,25 @@
     justify-content: space-between;
   }
   &__logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &__nav {
+      margin-right: 100px;
+      cursor: pointer;
+      align-items: center;
+      display: flex;
+      transition: $duration;
+      &__item:not(:last-child) {
+        margin-right: 25px;
+      }
+      &__item {
+        &:hover {
+          color: $red;
+        }
+      }
+    }
     & span {
       color: $red;
     }
@@ -37,10 +54,15 @@
       }
     }
   }
-
-  @media (max-width: 600px) {
-    &__logo {
+  @media (max-width: 530px) {
+    .header__logo span {
       display: none;
     }
+    .header__right__ico {
+      display: none;
+    }
+  }
+  @media (max-width: 680px) {
+    width: 400px;
   }
 }

@@ -9,7 +9,9 @@ const Header: React.FC<HeaderProps> = ({ photo }) => {
     <div className="header">
       <div className="header--wrapper">
         <div className="header__logo">
-          <span>AnimeList</span>
+          <div>
+            <span>AnimeList</span>
+          </div>
         </div>
         <div className="header__right">
           {photo ? (
