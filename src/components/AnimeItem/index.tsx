@@ -80,26 +80,26 @@ const AnimeItem: React.FC<AnimeItemProps> = ({
         <div className="anime__info__title">
           {title_english} <span>{title_japanese}</span>
         </div>
-        <div className="anime__info__year">
+        <div className="anime__info__item">
           {' '}
           <span>Score:</span> {score || 'not found'}
         </div>
-        <div className="anime__info__year">
+        <div className="anime__info__item">
           {' '}
           <span>Rating:</span> {rating || 'not found'}
         </div>
-        <div className="anime__info__year">
+        <div className="anime__info__item">
           {' '}
           <span>Year:</span> {year || 'not found'}
         </div>
-        <div className="anime__info__year">
+        <div className="anime__info__item">
           {' '}
           <span>Status:</span> {status}
         </div>
-        <div className="anime__info__genre">
+        <div className="anime__info__item">
           <span>Genres:</span> {genres.map((genre) => genre.name).join(', ')}
         </div>
-        <div className="anime__info__synopsis">{synopsis}</div>
+        <div className="anime__info__item">{synopsis}</div>
         {/* <div className="anime__info__more">Подробнее</div> */}
       </div>
     </div>

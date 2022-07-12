@@ -55,15 +55,17 @@
     margin-bottom: 100px;
     font-family: Bangers, Roboto;
     letter-spacing: 4px;
+    min-height: 60px;
     @media (max-width: 900px) {
       max-width: 100%;
-      overflow: scroll;
+      overflow-x: scroll;
     }
 
     @media (max-width: 1400px) {
       margin-bottom: 30px;
     }
     &__item {
+      height: 100%;
       font-size: $font-standart;
       font-weight: 700;
       width: 150%;
@@ -72,6 +74,7 @@
       margin-bottom: 5px;
       transition: $slowly-duration;
       cursor: pointer;
+      padding: 15px;
       user-select: none;
       &:hover {
         width: 150%;

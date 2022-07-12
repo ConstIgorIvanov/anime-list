@@ -30,7 +30,6 @@ const Selectors = () => {
   if (category !== 'list') return <div></div>;
   return (
     <div className="profile__main__top">
-      {' '}
       <div>
         <div>Search</div>
         <div className="input--wrapper">

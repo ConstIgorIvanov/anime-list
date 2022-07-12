@@ -1,14 +1,13 @@
+@import '../../scss/variables';
 .header {
   height: 70px;
-
   font-size: $font-super;
   background-color: $gray-background;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   user-select: none;
-
-  &--wrapper {
+  &__wrapper {
     width: 70%;
     margin: 0 auto;
     display: flex;

@@ -1,3 +1,4 @@
+@import '../../scss/variables';
 .pagination {
   display: flex;
   justify-content: center;
@@ -18,21 +19,13 @@
       color: $white;
       &:hover {
         background-color: $red;
-        color: #fff;
       }
-    }
-  }
-  .selected {
-    a {
-      background-color: $red;
-      color: #fff;
     }
   }
   :global {
     .selected {
       a {
         background-color: $red;
-        color: #fff;
       }
     }
   }

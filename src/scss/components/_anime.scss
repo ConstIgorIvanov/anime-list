@@ -24,37 +24,37 @@
       }
       margin-bottom: 20px;
     }
-    &__year {
+    &__item {
       font-size: $font-min;
       color: $gray;
       margin-bottom: 10px;
     }
-    &__season {
+    &__item {
       font-size: $font-min;
       color: $gray;
       margin-bottom: 10px;
     }
-    &__genre {
+    &__item {
       font-size: $font-min;
       color: $gray;
       margin-bottom: 10px;
     }
-    &__synopsis {
+    &__item {
       font-size: $font-min;
       color: $gray;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
-    &__more {
-      padding: 15px 20px;
-      border: 1px solid $red;
-      text-align: center;
-      border-radius: 8px;
-      transition: $duration;
-      &:hover {
-        cursor: pointer;
-        color: $red;
-      }
-    }
+    // &__more {
+    //   padding: 15px 20px;
+    //   border: 1px solid $red;
+    //   text-align: center;
+    //   border-radius: 8px;
+    //   transition: $duration;
+    //   &:hover {
+    //     cursor: pointer;
+    //     color: $red;
+    //   }
+    // }
   }
 
   &--mask {
