@@ -50,12 +50,13 @@ const AnimeItem: React.FC<AnimeItemProps> = ({
       setValue(`${title_english || title_japanese} добавлен в ${base}`);
       setTimeout(() => {
         setVisible(false);
-      }, 2000);
+      }, 1000);
     }
     if (category !== 'list') {
       dispatch(getAnimeFB({ uid, category }));
     }
   };
+  if (!images) return <div></div>;
   return (
     <div className="anime">
       <div className="anime--mask">

@@ -8,7 +8,7 @@
   border: 1px solid green;
   padding: 15px 20px;
   text-align: center;
-  transform: translateX(1000%);
+  transform: translateX(200%);
   transition: $medium-duration;
   &--active {
     transform: translateX(0px);

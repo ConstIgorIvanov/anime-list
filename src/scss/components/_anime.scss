@@ -65,6 +65,7 @@
     opacity: 0;
     visibility: hidden;
     display: flex;
+    pointer-events: none;
     flex-direction: column;
     &__item {
       cursor: pointer;
@@ -81,6 +82,7 @@
   }
   &:hover {
     .anime--mask {
+      pointer-events: auto;
       opacity: 1;
       visibility: visible;
     }
